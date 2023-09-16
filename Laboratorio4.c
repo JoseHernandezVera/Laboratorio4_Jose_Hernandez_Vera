@@ -141,14 +141,14 @@ int main() {
                 if (numCompanies > 0) 
 				{
                     printf("Ingrese el ano (2018-2022): ");
-                    int yearToFind, totalEmployees;
-                    scanf("%d", &yearToFind);
+                    int buscarYear, totalEmpleados;
+                    scanf("%d", &buscarYear);
                     for (int i = 0; i < numCompanies; i++) 
 					{
-                        totalEmployees = find_total_employees(companies[i], yearToFind);
-                        if (totalEmployees != -1) 
+                        totalEmpleados = find_total_employees(companies[i], buscarYear);
+                        if (totalEmpleados != -1) 
 						{
-                            printf("Nombre de la empresa: %s, Cantidad de empleados en %d: %d\n", companies[i].nombre, yearToFind, totalEmployees);
+                            printf("Nombre de la empresa: %s, Cantidad de empleados en %d: %d\n", companies[i].nombre, buscarYear, totalEmpleados);
                         }
                     }
                 } else {
@@ -160,11 +160,11 @@ int main() {
                 if (numCompanies > 0) 
 				{
                     printf("Ingrese el ano (2018-2022): ");
-                    int yearToDelete;
-                    scanf("%d", &yearToDelete);
+                    int EliminarYear;
+                    scanf("%d", &EliminarYear);
                     for (int i = 0; i < numCompanies; i++) 
 					{
-                        delete_employee_data(&companies[i], yearToDelete);
+                        delete_employee_data(&companies[i], EliminarYear);
                     }
                 } else {
                     printf("No hay companias registradas.\n");
@@ -180,8 +180,8 @@ int main() {
 					{
                         if (strcmp(companies[i].nombre, companyName) == 0) 
 						{
-                            float avgEmployees = calculate_average_employees(companies[i]);
-                            printf("Nombre de la empresa: %s, Promedio de empleados: %.2f\n", companies[i].nombre, avgEmployees);
+                            float PromedioEmpleados = calculate_average_employees(companies[i]);
+                            printf("Nombre de la empresa: %s, Promedio de empleados: %.2f\n", companies[i].nombre, PromedioEmpleados);
                             break;
                         }
                         if (i == numCompanies - 1) 
@@ -198,10 +198,10 @@ int main() {
                 if (numCompanies > 0) 
 				{
                     printf("Ingrese el ano (2018-2022): ");
-                    int yearForGeneralAvg;
-                    scanf("%d", &yearForGeneralAvg);
-                    float generalAvg = general_average_employees(companies, numCompanies, yearForGeneralAvg);
-                    printf("Promedio general de empleados en %d: %.2f\n", yearForGeneralAvg, generalAvg);
+                    int yearGeneralAvg;
+                    scanf("%d", &yearGeneralAvg);
+                    float generalAvg = general_average_employees(companies, numCompanies, yearGeneralAvg);
+                    printf("Promedio general de empleados en %d: %.2f\n", yearGeneralAvg, generalAvg);
                 } else {
                     printf("No hay companias registradas.\n");
                 }
